@@ -51,7 +51,7 @@ def getGeneralInfo():
     general_info['Version'] = platform.version()
     general_info['Platform'] = platform.platform()
     general_info['Machine Type'] = platform.machine()
-    general_info['Architecture'] = platform.architecture()
+    general_info['Architecture'] = str(platform.architecture()[0]) + ' ' + str(platform.architecture()[1])
     general_info['Processor'] = platform.processor()
     general_info['System'] = platform.system()
     general_info['System Release'] = platform.release()
