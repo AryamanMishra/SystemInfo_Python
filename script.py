@@ -39,9 +39,9 @@ def formulate(memB):
 def filldDiskStats(drive):
     
     disk_stats = psutil.disk_usage(str(drive) + ':')
-    disk_info['Total disk space in ' + str(drive) + ' drive'] = formulate(disk_stats.total)
-    disk_info['Used disk space in ' + str(drive) + ' drive'] = formulate(disk_stats.used)
-    disk_info['Free disk space in ' + str(drive) + ' drive'] = formulate(disk_stats.free)
+    disk_info['Total space in ' + str(drive) + ' drive'] = formulate(disk_stats.total)
+    disk_info['Used space in ' + str(drive) + ' drive'] = formulate(disk_stats.used)
+    disk_info['Free space in ' + str(drive) + ' drive'] = formulate(disk_stats.free)
  
 
 
@@ -89,22 +89,20 @@ def getMemoryInfo():
 
 def getUserInfo():
     
-    user_info = psutil.users()
-    user_info['User name'] = user_info[0].name
+    user_stats = psutil.users()
+    user_info['User name'] = user_stats[0].name
     return user_info
 
 
 
 
-def getVersionsInfo():
-    
+def getVersionsInfo(): 
     versions_info['Python Version: '] = platform.python_version()
     return versions_info
 
 
 
 def getEnvironmentInfo():
-    os.cpu_count
     environment_info['Environment Variables:'] = os.environ
     return environment_info
 
@@ -136,5 +134,5 @@ def getGPUInfo():
     gpu_info['Video Mode'] = gpu.VideoModeDescription
     gpu_info['RAM'] = formulate(gpu.AdapterRAM)
     gpu_info['Status'] = gpu.Status
-    print(gpu_info)
+    return gpu_info
     
