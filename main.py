@@ -10,6 +10,9 @@ window.geometry("700x500")
 window.configure(bg='black')
 
 
+general_info = script.getGeneralInfo()
+
+
 main_button = tk.Button(
     text="Get Your System Specifications !!",
     width=26,
