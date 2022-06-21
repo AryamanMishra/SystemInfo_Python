@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+
 import script
 
 window = tk.Tk()
@@ -10,8 +11,15 @@ window.geometry("700x500")
 window.configure(bg='black')
 
 
-general_info = script.getGeneralInfo()
 
+
+
+
+
+
+def hide_button(widget):
+    widget.pack_forget()
+    
 
 main_button = tk.Button(
     text="Get Your System Specifications !!",
@@ -20,9 +28,10 @@ main_button = tk.Button(
     font='Georgia',
     fg="Black",
     bg='Yellow',
-    bd=10
+    bd=10,
+    command=lambda:[hide_button(main_button)]
 )
 
+main_button.pack(pady=40)
 main_button.pack()
-main_button.place(relx=0.5, rely=0.5, anchor='center')
 window.mainloop()

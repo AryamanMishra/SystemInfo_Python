@@ -111,10 +111,10 @@ def getEnvironmentInfo():
 
 
 def getCpuInfo():
-    cpu_info['CPU count'] = psutil.cpu_count
-    cpu_info['Current Frequency'] = str(psutil.cpu_freq.current) + 'GHz'
-    cpu_info['Min Frequency'] = str(psutil.cpu_freq.min) + 'GHz'
-    cpu_info['Max Frequency'] = str(psutil.cpu_freq.max) + 'GHz'
+    cpu_info['CPU count'] = psutil.cpu_count()
+    cpu_info['Current Frequency'] = str(psutil.cpu_freq().current) + 'GHz'
+    cpu_info['Min Frequency'] = str(psutil.cpu_freq().min) + 'GHz'
+    cpu_info['Max Frequency'] = str(psutil.cpu_freq().max) + 'GHz'
     return cpu_info
 
 
@@ -136,5 +136,5 @@ def getGPUInfo():
     gpu_info['Video Mode'] = gpu.VideoModeDescription
     gpu_info['RAM'] = formulate(gpu.AdapterRAM)
     gpu_info['Status'] = gpu.Status
-    return gpu_info
+    print(gpu_info)
     
