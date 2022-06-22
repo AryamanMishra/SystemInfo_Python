@@ -103,7 +103,8 @@ def getVersionsInfo():
 
 
 def getEnvironmentInfo():
-    environment_info['Environment Variables:'] = os.environ
+    for key,value in os.environ.items():
+        environment_info[key] = value
     return environment_info
 
 

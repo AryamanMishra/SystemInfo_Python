@@ -48,7 +48,7 @@ frame5 = LabelFrame(window, text='Memory Information')
 frame6 = LabelFrame(window, text='Network Information')
 frame7 = LabelFrame(window, text='User Information')
 frame8 = LabelFrame(window, text='Versions Information')
-frame9 = LabelFrame(window, text='Environment Information')
+frame9 = LabelFrame(window, text='Environment Variables')
 
 #<------------------- Initialised frames ---------------------------------->
 
@@ -62,8 +62,8 @@ frame9 = LabelFrame(window, text='Environment Information')
 
 def main_button():   
     main_button = tk.Button(
-        text = "View System Specifications !!",
-        width = 26,
+        text = "View System Specifications !!\n (Scroll column sideways if data is not visible)",
+        width = 35,
         height = 5,
         font = ('Georgia',16),
         fg = "Black",
@@ -87,8 +87,8 @@ def main_button():
             frame7.grid(row=2,column=0),
             table('versions', frame8),
             frame8.grid(row=2,column=1),
-            # table('environment', frame9),
-            # frame9.grid(row=2,column=2)
+            table('environment', frame9),
+            frame9.grid(row=2,column=2)
         ]
     )
     main_button.pack()
