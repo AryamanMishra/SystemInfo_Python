@@ -3,11 +3,12 @@ import tkinter as tk
 from tkintertable import TableCanvas, TableModel
 
 
-def table(info,window):
+def table(info,frame):
     
     data = {}
     if info == 'general':
         head = tk.Label(
+            frame,
             text='General Information: ',
             font=("Georgia", 16),
             bg="black",
@@ -90,10 +91,10 @@ def table(info,window):
         data = script.getEnvironmentInfo()
        
         
-    head.pack()
-    tframe = tk.Frame(window)
-    tframe.pack()
-    table = TableCanvas(tframe,rows= len(data),cols=2,read_only=True,height=200,width=1000)
+    # head.pack()
+    # tframe = tk.LabelFrame(window)
+    # tframe.pack()
+    table = TableCanvas(frame,rows= len(data),cols=2,read_only=True,height=220,width=430)
     i=0
     j=0
     for key,value in data.items():
