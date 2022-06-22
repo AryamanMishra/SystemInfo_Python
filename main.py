@@ -87,8 +87,8 @@ def main_button():
             frame7.grid(row=2,column=0),
             table('versions', frame8),
             frame8.grid(row=2,column=1),
-            table('environment', frame9),
-            frame9.grid(row=2,column=2)
+            # table('environment', frame9),
+            # frame9.grid(row=2,column=2)
         ]
     )
     main_button.pack()
