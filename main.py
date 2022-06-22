@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import font
 from tkinter.ttk import LabelFrame
 from tkintertable import TableCanvas, TableModel
-
+import psutil
 import script
 from table import table
 
