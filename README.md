@@ -1,1 +1,1 @@
-A basic tool showing System Information using tkinter and various python libraries
+A basic tool showing System Information using pysimplegui and various python libraries
