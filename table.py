@@ -95,7 +95,7 @@ def table(info,frame):
     # tframe = tk.LabelFrame(window)
     # tframe.pack()
    
-    table = TableCanvas(frame,rows= len(data),cols=2,read_only=True,height=220,width=430)
+    table = TableCanvas(frame,rows= len(data),cols=2,read_only=True,height=200,width=420)
     
     i=0
     j=0
