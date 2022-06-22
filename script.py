@@ -62,9 +62,8 @@ def getGeneralInfo():
 def getDiskInfo():
     partitions = psutil.disk_partitions()
     for p in partitions:
-        if p.device[:-2] == 'E':
-            continue
-        filledDiskStats(str(p.device[:-1]))
+        if p.opts != 'cdrom':
+            filledDiskStats(str(p.device[:-1]))
     return disk_info
 
 
@@ -116,7 +115,7 @@ def getCpuInfo():
     cpu_info['Max Frequency'] = str(psutil.cpu_freq().max) + 'GHz'
     return cpu_info
 
-
+# print(psutil.disk_partitions())
 
 # def getSensorsInfo():
 #     sensors_info['Fans'] = psutil.sen
