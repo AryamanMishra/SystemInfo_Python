@@ -1,3 +1,5 @@
+#<------------------- Import required libraries ------------------->
+
 import tkinter as tk
 from tkinter import font
 from tkinter.ttk import LabelFrame
@@ -6,9 +8,13 @@ from tkintertable import TableCanvas, TableModel
 import script
 from table import table
 
+#<------------------- Import required libraries ------------------->
 
 
-#<-------------------- Window Configuration ----------------------->
+
+
+
+#<-------------------- tkinter Window Configuration ----------------------->
 
 window = tk.Tk()
 window.title('System Information')
@@ -16,20 +22,23 @@ window.geometry("700x500")
 window.configure(bg='black')
 
 
-#<-------------------- Window Configuration ----------------------->
+#<-------------------- tkinter Window Configuration ----------------------->
 
 
-# def raise_frame(frame):
-#     frame.tkraise()
 
-# def pack_frame(frame):
-#     frame.pack()
+
+
+
+#<--------------- Hide Widget Method for hiding widgets ------------------->
 
 def hide_widget(widget):
     widget.pack_forget()  
     
+#<--------------- Hide Widget Method for hiding widgets ------------------->
 
 
+
+#<------------------- Initialised frames ---------------------------------->
 
 frame1 = LabelFrame(window, text='General Information')
 frame2 = LabelFrame(window, text='CPU Information')
@@ -41,11 +50,14 @@ frame7 = LabelFrame(window, text='User Information')
 frame8 = LabelFrame(window, text='Versions Information')
 frame9 = LabelFrame(window, text='Environment Information')
 
+#<------------------- Initialised frames ---------------------------------->
 
     
 
-#<--------------------- Main button --------------------------->
 
+
+
+#<--------------------- Main button --------------------------->
 
 
 def main_button():   
