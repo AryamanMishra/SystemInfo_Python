@@ -36,9 +36,9 @@ def formulate(memB):
     
 
       
-def filldDiskStats(drive):
+def filledDiskStats(drive):
     
-    disk_stats = psutil.disk_usage(str(drive) + ':')
+    disk_stats = psutil.disk_usage(str(drive))
     disk_info['Total space in ' + str(drive) + ' drive'] = formulate(disk_stats.total)
     disk_info['Used space in ' + str(drive) + ' drive'] = formulate(disk_stats.used)
     disk_info['Free space in ' + str(drive) + ' drive'] = formulate(disk_stats.free)
@@ -60,13 +60,13 @@ def getGeneralInfo():
 
 
 def getDiskInfo():
-
-    filldDiskStats('C')
-    filldDiskStats('D')
-    filldDiskStats('F')
-    filldDiskStats('G')
-    filldDiskStats('H')
+    partitions = psutil.disk_partitions()
+    for p in partitions:
+        if p.device[:-2] == 'E':
+            continue
+        filledDiskStats(str(p.device[:-1]))
     return disk_info
+
 
 
 
