@@ -1,7 +1,8 @@
 #<------------------- Import required libraries ------------------->
 
 import tkinter as tk
-from tkinter import font
+from tkinter import Button, font
+from tkinter import filedialog
 from tkinter.ttk import LabelFrame
 from tkintertable import TableCanvas, TableModel
 import psutil
@@ -88,7 +89,8 @@ def main_button():
             table('versions', frame8),
             frame8.grid(row=2,column=1),
             table('environment', frame9),
-            frame9.grid(row=2,column=2)
+            frame9.grid(row=2,column=2),
+            showButton()
         ]
     )
     main_button.pack()
@@ -96,6 +98,43 @@ def main_button():
 main_button()
 
 #<--------------------- Main button --------------------------->
+
+
+
+
+
+#<--------------------- Save File method ---------------------->
+
+def saveFile():
+    try:
+        file = filedialog.asksaveasfile(
+            initialfile = "System Information Report",
+            defaultextension = ".txt",
+            filetypes = [
+                ("Text File", ".txt"),
+                ("JSON File", ".json"),
+                ("All files", "*")
+            ]
+        )
+        file_text = script.getWholeData()
+        file.write(file_text)
+        file.close()
+    except:
+        pass
+
+#<--------------------- Save File method ---------------------->
+
+
+
+
+#<---------------------Generate report button ----------------->
+
+def showButton():
+    gen_rep_button = Button(text='Generate Report', command=saveFile, fg="Black", bg="Yellow", font=("Georgia",16))
+    gen_rep_button.grid(row=3,column=1)
+
+
+#<---------------------Generate report button ----------------->
 
 
 

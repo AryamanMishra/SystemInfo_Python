@@ -1,5 +1,7 @@
+import json
 import math,os
 import platform,socket,psutil
+from textwrap import indent
 import wmi
 
 
@@ -136,3 +138,23 @@ def getGPUInfo():
     gpu_info['Status'] = gpu.Status
     return gpu_info
     
+
+
+
+whole_data = {}
+whole_data['General Information'] = getGeneralInfo()
+whole_data['CPU Information'] = getCpuInfo()
+whole_data['GPU Information'] = getGPUInfo()
+whole_data['Disk Information'] = getDiskInfo()
+whole_data['Memory Information'] = getMemoryInfo()
+whole_data['Network Information'] = getNetworkInfo()
+whole_data['Users Information'] = getUserInfo()
+whole_data['Versions Information'] = getVersionsInfo()
+whole_data['Environment Variables'] = getEnvironmentInfo()
+
+
+
+
+def getWholeData():
+    whole_data_json = json.dumps(whole_data, indent=4)
+    return whole_data_json
