@@ -94,8 +94,11 @@ def main_button():
         ]
     )
     main_button.pack()
-
-main_button()
+    
+try:
+    main_button()
+except:
+    pass
 
 #<--------------------- Main button --------------------------->
 
